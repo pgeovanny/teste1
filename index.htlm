@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Manual do Aprovado — Método testado por 15 aprovações</title>
+  <meta name="description" content="Aprenda a estudar do jeito certo e passe mais rápido em concursos com um passo a passo validado por servidores públicos (+15 aprovações).">
+  <meta name="theme-color" content="#0E7A3C">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Manual do Aprovado — Método testado por 15 aprovações">
+  <meta property="og:description" content="Passo a passo claro e prático para estudar certo e conquistar sua vaga.">
+  <meta property="og:image" content="https://your-cdn.com/manual-aprovado-cover.jpg"><!-- TODO: trocar -->
+  <meta property="og:url" content="https://seu-dominio.netlify.app/"><!-- TODO: trocar -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnects (performance) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
+  <style>
+    :root{
+      --bg:#0b0f0e;          /* fundo bem escuro p/ contraste */
+      --surface:#101615;     /* cards */
+      --muted:#c7d1ce;       /* texto secundário */
+      --text:#f5fbf9;        /* texto primário */
+      --brand:#12a150;       /* botão/realce */
+      --brand-700:#0E7A3C;
+      --warning:#ffce4a;     /* oferta */
+      --danger:#e5484d;      /* contagem/urgência */
+      --ok:#2ecc71;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px;
+      --w:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      color:var(--text); background:radial-gradient(1200px 600px at 80% -10%, #113728 0%, #0e1513 45%, #0b0f0e 100%);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--w); margin-inline:auto; padding:0 20px}
+    header{
+      position:sticky; top:0; backdrop-filter:saturate(130%) blur(8px);
+      background:rgba(11,15,14,.6); border-bottom:1px solid rgba(255,255,255,.06); z-index:10
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; gap:10px; align-items:center}
+    .logo{
+      inline-size:36px; block-size:36px; border-radius:10px;
+      background:linear-gradient(135deg,var(--brand),#36d980 70%); box-shadow:var(--shadow)
+    }
+    .brand b{letter-spacing:.2px}
+    .nav-cta a{display:inline-block; padding:10px 16px; background:transparent; border:1px solid #234b3a; border-radius:12px}
+    .hero{
+      padding:70px 0 30px; display:grid; gap:28px
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px; color:#b7f5cf; font-weight:600; font-size:.9rem;
+      background:rgba(18,161,80,.12); border:1px solid rgba(18,161,80,.25); padding:8px 12px; border-radius:999px
+    }
+    h1{font-size:clamp(1.9rem,3.6vw,3rem); line-height:1.12; margin:0}
+    .sub{font-size:clamp(1.05rem,1.4vw,1.25rem); color:var(--muted); max-width:58ch}
+    .badges{display:flex; gap:12px; flex-wrap:wrap}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; background:#0f1916; border:1px solid rgba(255,255,255,.07); color:#dce9e5; font-size:.93rem}
+    .cta{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap
+    }
+    .btn{
+      background:linear-gradient(180deg,#1bc46a,#12a150);
+      color:#052611; font-weight:700; border:none; padding:14px 22px; border-radius:14px; cursor:pointer; box-shadow:0 12px 24px rgba(18,161,80,.25);
+      transition:transform .05s ease, filter .2s ease; font-size:1.05rem
+    }
+    .btn:hover{transform:translateY(-1px); filter:saturate(115%)}
+    .btn.outline{background:transparent; border:1px solid #2a5b48; color:#bff2da}
+    .section{padding:56px 0; border-top:1px solid rgba(255,255,255,.06)}
+    .grid{display:grid; gap:18px}
+    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px}
+    .card{background:var(--surface); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 6px; font-size:1.05rem}
+    .muted{color:var(--muted)}
+    .offer{
+      background:linear-gradient(180deg,#18130a,#101615); border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius); padding:22px; display:grid; gap:12px; box-shadow:var(--shadow)
+    }
+    .price{display:flex; gap:18px; align-items:baseline; flex-wrap:wrap}
+    .price s{color:#a6b2ae}
+    .price .now{font-size:2rem; font-weight:800; color:#ffe08a}
+    .count{display:flex; align-items:center; gap:10px; color:#ffd37a; font-weight:700}
+    .count .dot{inline-size:10px; block-size:10px; background:var(--danger); border-radius:50%; box-shadow:0 0 0 6px rgba(229,72,77,.18)}
+    .modules{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px}
+    .module{background:linear-gradient(180deg,#111916,#0e1513); border:1px solid rgba(255,255,255,.07); border-radius:var(--radius); padding:18px}
+    .module h4{margin:6px 0 10px}
+    .list{margin:0; padding-left:18px}
+    .list li{margin:6px 0}
+    .faq details{background:#0f1916; border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:14px 16px}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer; font-weight:600}
+    .author{display:grid; grid-template-columns:1.1fr .9fr; gap:16px}
+    @media (max-width:900px){ .author{grid-template-columns:1fr} }
+    .guarantee{display:flex; gap:12px; align-items:center; background:#0f1916; border:1px solid rgba(255,255,255,.07); padding:14px 16px; border-radius:12px}
+    footer{padding:40px 0 60px; color:#98a39f; text-align:center}
+    .footer-links{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .kicker{font-weight:700; color:#c5f5da}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#conteudo">Pular para o conteúdo</a>
+  <header role="banner" aria-label="Topo do site">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <b>Manual do Aprovado</b>
+      </div>
+      <nav class="nav-cta" aria-label="Atalhos">
+        <a href="#checkout">Comprar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="wrap">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="eyebrow">✅ Método validado por servidores</span>
+      <h1 id="hero-title">Manual do Aprovado — o método testado por <span class="kicker">15 aprovações</span> para você estudar certo e passar rápido.</h1>
+      <p class="sub">Estude de forma organizada, com um passo a passo validado por servidores públicos, e conquiste sua vaga no próximo concurso sem perder anos testando métodos que não funcionam.</p>
+      <div class="cta">
+        <a class="btn" href="#checkout" aria-label="Ir para o checkout">Quero garantir meu manual agora</a>
+        <a class="btn outline" href="#pra-quem" aria-label="Ver se é pra mim">Ver se é pra mim</a>
+      </div>
+      <div class="badges" aria-label="Sinais de confiança">
+        <span class="badge">🏅 +15 aprovações</span>
+        <span class="badge">🛡️ Garantia 7 dias</span>
+        <span class="badge">🔒 Compra 100% segura</span>
+      </div>
+    </section>
+
+    <!-- EMPATIA / DOR -->
+    <section class="section" aria-labelledby="dor">
+      <h2 id="dor">Se você estuda e não vê resultado, o problema não é você — é o método.</h2>
+      <p class="muted">A maioria dos concurseiros começa errado: pulando de técnica em técnica, estudando sem organização e perdendo tempo com estratégias que não funcionam. O <b>Manual do Aprovado</b> muda isso com um plano claro, prático e comprovado, que mostra exatamente o que fazer desde o primeiro dia de estudo até a aprovação.</p>
+      <div class="cta"><a class="btn outline" href="#conteudo-programatico">Quero aprender o método</a></div>
+    </section>
+
+    <!-- PRA QUEM É -->
+    <section class="section" id="pra-quem" aria-labelledby="publico">
+      <h2 id="publico">Pra quem é o Manual do Aprovado</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem"><h3>Estuda há mais de 1 ano e ainda não passou</h3><p class="muted">Aprenda um método que já colocou 15 pessoas no cargo.</p></article>
+        <article class="card" role="listitem"><h3>Sente-se perdido e sem direção</h3><p class="muted">Plano claro do dia 1 até a aprovação.</p></article>
+        <article class="card" role="listitem"><h3>Quer passar mais rápido</h3><p class="muted">Corte anos de tentativa e erro com um passo a passo.</p></article>
+        <article class="card" role="listitem"><h3>Cansado de não ver evolução</h3><p class="muted">Sistema para medir e acelerar seu progresso.</p></article>
+        <article class="card" role="listitem"><h3>Não quer ser “concurseiro vitalício”</h3><p class="muted">Foco em aprovação na próxima oportunidade.</p></article>
+      </div>
+    </section>
+
+    <!-- CONTEÚDO -->
+    <section class="section" id="conteudo-programatico" aria-labelledby="conteudo">
+      <h2 id="conteudo">O que você vai aprender</h2>
+      <div class="modules">
+        <div class="module">
+          <h4>📘 Módulo 1 — Planejamento Inteligente</h4>
+          <ul class="list">
+            <li>Como escolher o concurso‑alvo</li>
+            <li>Quantas horas estudar por dia</li>
+            <li>Pré x Pós‑edital: o que muda</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h4>🧠 Módulo 2 — Estratégia de Estudo Eficiente</h4>
+          <ul class="list">
+            <li>Montagem do ciclo de estudos</li>
+            <li>PDF ou Videoaula? Como decidir</li>
+            <li>Resumos, mapas mentais e flashcards</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h4>🔁 Módulo 3 — Revisão e Prática</h4>
+          <ul class="list">
+            <li>Revisões que realmente fixam</li>
+            <li>Como, quanto e quando fazer questões</li>
+            <li>Como estudar a lei seca</li>
+          </ul>
+        </div>
+        <div class="module">
+          <h4>🚀 Módulo 4 — Aceleração e Aprovação</h4>
+          <ul class="list">
+            <li>Acompanhe sua evolução sem autoengano</li>
+            <li>Estrategias para a reta final</li>
+            <li>Dia da prova: execução e calma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTORIDADE -->
+    <section class="section" aria-labelledby="autoridade">
+      <div class="author">
+        <div>
+          <h2 id="autoridade">Quem elaborou este material</h2>
+          <p class="muted">Conteúdo desenvolvido por <b>servidores públicos do Tribunal de Justiça de Goiás</b>, que juntos acumulam <b>+15 aprovações em concursos</b>, incluindo colocações em primeiro lugar. O que levamos anos para aprender na marra foi organizado de forma clara e aplicada — para você evitar os mesmos erros, economizar anos de estudo e aumentar muito suas chances de passar no próximo concurso.</p>
+          <div class="guarantee" role="note" aria-label="Garantia">
+            <span>🛡️</span>
+            <div>
+              <b>Garantia incondicional de 7 dias.</b>
+              <div class="muted">Não gostou? Devolvemos seu dinheiro sem burocracia.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="offer" id="checkout" aria-labelledby="oferta">
+            <h3 id="oferta">Oferta especial</h3>
+            <div class="price">
+              <s>De R$ 197,00</s>
+              <div class="now">Por R$ 97,00</div>
+            </div>
+            <div class="count">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Termina em <span id="timer" aria-live="polite">--:--:--</span></span>
+            </div>
+            <p class="muted">Bônus de hoje: <b>Checklist de Preparação Rápida</b> (PDF).</p>
+            <div class="cta">
+              <a class="btn" href="https://pay.seu-checkout.com/manual-aprovado" target="_blank" rel="noopener" aria-label="Finalizar compra agora">
+                Quero minha aprovação agora
+              </a>
+              <a class="btn outline" href="https://wa.me/5599999999999?text=Tenho%20d%C3%BAvidas%20sobre%20o%20Manual%20do%20Aprovado" target="_blank" rel="noopener" aria-label="Tirar dúvidas no WhatsApp">Tirar dúvidas no WhatsApp</a>
+            </div>
+            <small class="muted">Pagamento 100% seguro. Acesso imediato.</small>
+            <!-- Config da contagem: mude o atributo data-end -->
+            <div id="deadline" data-end="2025-08-17T23:59:59-03:00" hidden></div>
+            <!-- TODO: ajuste a data acima ou remova a contagem se não usar urgência temporal real -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL (opcional: substitua pelos seus) -->
+    <section class="section" aria-labelledby="provasocial">
+      <h2 id="provasocial">Resultados e depoimentos</h2>
+      <div class="cards">
+        <article class="card"><p>“Segui o plano do Manual por 3 meses e fui aprovado em 1º lugar no meu município.”</p><small class="muted">— A., Administrativo</small></article>
+        <article class="card"><p>“Pare de tentar 100 técnicas. Aqui eu aprendi a organizar o estudo e medir evolução.”</p><small class="muted">— M., Fiscal</small></article>
+        <article class="card"><p>“A parte de questões e reta final valeu o investimento sozinha.”</p><small class="muted">— R., Tribunais</small></article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" aria-labelledby="faq">
+      <h2 id="faq">Perguntas frequentes</h2>
+      <details>
+        <summary>Funciona para qualquer concurso?</summary>
+        <p class="muted">Sim. O método é adaptável a tribunais, carreiras policiais, fiscais e outras áreas. Você ajusta o plano ao edital-alvo.</p>
+      </details>
+      <details>
+        <summary>Preciso de muito tempo por dia?</summary>
+        <p class="muted">Não. Há rotas para diferentes rotinas — inclusive trabalhando — com foco em constância e priorização.</p>
+      </details>
+      <details>
+        <summary>Já tentei outros métodos. O que muda?</summary>
+        <p class="muted">Você recebe um <b>sistema</b> completo (planejamento → estudo → revisão → questões → reta final), não dicas soltas.</p>
+      </details>
+      <details>
+        <summary>Como recebo o material?</summary>
+        <p class="muted">Entrega 100% digital, acesso imediato após a confirmação do pagamento.</p>
+      </details>
+    </section>
+
+    <!-- WHATSAPP -->
+    <section class="section" aria-labelledby="contato">
+      <h2 id="contato">Ainda com dúvidas?</h2>
+      <p class="muted">Fale com a nossa equipe agora pelo WhatsApp. Resposta rápida durante horário comercial.</p>
+      <div class="cta"><a class="btn outline" href="https://wa.me/5599999999999?text=Oi!%20Quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20Manual%20do%20Aprovado" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="/politica-de-privacidade.html">Política de Privacidade</a>
+        <span>•</span>
+        <a href="/termos.html">Termos de Uso</a>
+        <span>•</span>
+        <a href="mailto:contato@seudominio.com">Contato</a>
+      </div>
+      <p style="margin-top:12px">© <span id="year"></span> Manual do Aprovado. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JSON-LD Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Manual do Aprovado",
+    "description": "Passo a passo definitivo para estudar do jeito certo e passar mais rápido em concursos.",
+    "brand": {"@type":"Brand","name":"Manual do Aprovado"},
+    "image": "https://your-cdn.com/manual-aprovado-cover.jpg",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://pay.seu-checkout.com/manual-aprovado",
+      "priceCurrency": "BRL",
+      "price": "97.00",
+      "priceValidUntil": "2025-08-17",  // TODO: alinhar com o deadline
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JS compacto: smooth scroll, contador e ano -->
+  <script>
+    // Smooth scroll para âncoras internas
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contador regressivo (edite data no #deadline[data-end])
+    (function(){
+      const d = document.getElementById('deadline');
+      const t = document.getElementById('timer');
+      if(!d || !t) return;
+      const deadline = new Date(d.dataset.end);
+      if(isNaN(deadline.getTime())) { t.textContent = 'em breve'; return; }
+      function pad(n){return String(n).padStart(2,'0');}
+      function tick(){
+        const now = new Date();
+        const ms = deadline - now;
+        if(ms <= 0){ t.textContent = 'encerrada'; return; }
+        const s = Math.floor(ms/1000)%60;
+        const m = Math.floor(ms/60000)%60;
+        const h = Math.floor(ms/3600000)%24;
+        const dleft = Math.floor(ms/86400000);
+        t.textContent = (dleft>0? dleft+'d ':'')+pad(h)+':'+pad(m)+':'+pad(s);
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+  </script>
+</body>
+</html>
